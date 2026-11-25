@@ -568,6 +568,18 @@
       pointer-events: none;
     }
 
+    #guest-name-input.is-invalid {
+      border-color: rgba(251, 113, 133, 0.9);
+      box-shadow: 0 0 0 3px rgba(251, 113, 133, 0.25);
+      animation: inputShake 0.36s ease;
+    }
+
+    @keyframes inputShake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+
     .gold-star-icon {
       display: inline-flex;
       color: #FDE047;
@@ -1339,6 +1351,9 @@
           autocomplete="name"
           class="w-full px-4 py-2.5 rounded-full bg-white/10 border border-gold-400/50 text-center text-sm sm:text-base text-white placeholder-blue-200/60 backdrop-blur-md focus:outline-none focus:border-gold-300 focus:ring-2 focus:ring-gold-400/40 transition"
         />
+        <p id="guest-name-error" class="hidden mt-1.5 text-center text-xs text-rose-300 font-semibold">
+          Bạn iu ơi, hãy nhập tên trước khi mở thiệp nhé!
+        </p>
       </div>
 
       <button
@@ -1424,13 +1439,13 @@
               </span>
             </h1>
 
-            <div id="guest-invite-banner" class="mb-5">
-              <p class="text-sm sm:text-base uppercase tracking-[0.22em] text-gold-300 font-bold">
+            <div id="guest-invite-banner" class="mb-5 flex flex-wrap items-baseline justify-center lg:justify-start gap-2.5">
+              <span class="text-sm sm:text-base uppercase tracking-[0.22em] text-gold-300 font-bold">
                 Thân mời :
-              </p>
-              <p id="guest-name-display" class="text-2xl sm:text-3xl font-bold italic text-white mt-1">
+              </span>
+              <span id="guest-name-display" class="text-2xl sm:text-3xl font-bold italic text-white">
                 Bạn iu
-              </p>
+              </span>
             </div>
 
             <p class="italic text-xl sm:text-2xl text-blue-200 mb-7">
@@ -1545,10 +1560,19 @@
         </h2>
         <div class="w-16 h-[2px] bg-gold-400 mx-auto mb-7"></div>
         <p class="text-blue-100/90 text-base sm:text-lg leading-relaxed mb-4">
-          Thanh xuân dưới mái trường <strong class="text-white">Đại học Công nghiệp TP.HCM (IUH)</strong> là những trang ký ức rực rỡ nhất với thật nhiều bài học quý giá, những buổi chiều nắng vàng ở số 12 Nguyễn Văn Bảo và tình cảm ấm áp từ gia đình, thầy cô cùng những người bạn thân thương.
+          Chớp mắt một cái, 4 năm đã trôi qua như một cơn gió.
+        </p>
+        <p class="text-blue-100/90 text-base sm:text-lg leading-relaxed mb-4">
+          Cơn gió ấy mang mùa hạ của mình qua đủ nắng, mưa và những khoảng trời từng khiến mình hoài nghi chính mình.
+        </p>
+        <p class="text-blue-100/90 text-base sm:text-lg leading-relaxed mb-4">
+          Nhưng rồi mình hiểu, cầu vồng không xuất hiện để xóa đi cơn mưa, mà để nhắc rằng mình đã đi qua nó.
+        </p>
+        <p class="text-blue-100/90 text-base sm:text-lg leading-relaxed mb-4">
+          4 năm ấy, mình may mắn có những người cùng đi qua những ngày nắng, những ngày mưa, và cả những ngày chẳng biết gọi tên thế nào.
         </p>
         <p class="text-blue-100/90 text-base sm:text-lg leading-relaxed">
-          Mình là <strong class="text-white">Nguyễn Bích Trân</strong> (<span class="italic text-gold-300">@tranbtwinkle</span>) — trân trọng kính mời bạn đến chung vui vào lúc <strong class="text-gold-300">15:00</strong> để cùng nhau chụp những tấm hình kỷ niệm thật đẹp và lưu giữ khoảnh khắc trưởng thành đáng nhớ này!
+          Cảm ơn vì đã là một phần trong mùa hạ của mình. Hẹn gặp bạn ở nơi mùa hạ ấy khép lại.
         </p>
       </div>
     </section>
@@ -1653,12 +1677,12 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-white mb-2">Trang Phục Gợi Ý</h3>
+              <h3 class="text-xl font-bold text-white mb-2">Dresscode</h3>
               <p class="text-gold-300 font-bold text-base">
                 Trắng • Xanh Dương • Kem • Đen
               </p>
               <p class="text-blue-100 text-sm mt-1 leading-relaxed">
-                Trang phục thanh lịch, thoải mái để cùng lên hình thật hài hòa với bộ lễ phục tốt nghiệp.
+                Trang phục thật slay slung, thanh lịch và thoải mái để cùng lên hình thật xinh iu cùng mình nhaa
               </p>
             </div>
             <div class="mt-6 flex items-center gap-2.5">
@@ -1747,13 +1771,13 @@
 
             <div class="timeline-card rounded-2xl border border-white/15 bg-white/5 p-6">
               <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-navy-950/80 border border-blue-300/40 text-blue-200 text-xs font-bold mb-4">
-                <span>16:00</span>
+                <span>18:00</span>
               </div>
               <h4 class="text-xl font-bold text-white mb-2">
-                03. Giao Lưu &amp; Kỷ Niệm
+                03. Đi Ăn Tối — Giao Lưu &amp; Kỷ Niệm
               </h4>
               <p class="text-sm text-blue-100/85 leading-relaxed">
-                Trò chuyện thân mật, dạo quanh những góc kỷ niệm thân quen ở IUH và lưu lại thật nhiều khoảnh khắc đáng nhớ cùng <span class="italic text-gold-300">tranbtwinkle</span>.
+                Ăn uống, trò chuyện và lưu lại thật nhiều khoảnh khắc đáng nhớ cùng tuii.
               </p>
             </div>
           </div>
@@ -1786,40 +1810,40 @@
               class="photo-placeholder has-photo gallery-trigger aspect-[3/4] md:aspect-auto md:min-h-full flex-1 w-full rounded-2xl"
               data-index="1"
             >
-              <img src="images/anh-02.jpg" alt="Ảnh 02" loading="lazy" />
-              <span class="photo-caption">Lorem ipsum</span>
+              <img src="images/anh-02.jpg" alt="Ảnh 02 — Thanh xuân rực rỡ" loading="lazy" />
+              <span class="photo-caption">Thanh xuân rực rỡ</span>
             </div>
           </div>
 
           <!-- ẢNH 03 -->
           <div class="star-frame p-2 sm:p-3 rounded-3xl">
             <div class="photo-placeholder has-photo gallery-trigger aspect-[3/4] w-full rounded-2xl" data-index="2">
-              <img src="images/anh-03.jpg" alt="Ảnh 03" loading="lazy" />
-              <span class="photo-caption">Dolor sit amet</span>
+              <img src="images/anh-03.jpg" alt="Ảnh 03 — Nắng vàng IUH" loading="lazy" />
+              <span class="photo-caption">Nắng vàng IUH</span>
             </div>
           </div>
 
           <!-- ẢNH 04 -->
           <div class="star-frame p-2 sm:p-3 rounded-3xl">
             <div class="photo-placeholder has-photo gallery-trigger aspect-[3/4] w-full rounded-2xl" data-index="3">
-              <img src="images/anh-04.jpg" alt="Ảnh 04" loading="lazy" />
-              <span class="photo-caption">Consectetur</span>
+              <img src="images/anh-04.jpg" alt="Ảnh 04 — Trưởng thành hơn" loading="lazy" />
+              <span class="photo-caption">Trưởng thành hơn</span>
             </div>
           </div>
 
           <!-- ẢNH 05 -->
           <div class="star-frame p-2 sm:p-3 rounded-3xl">
             <div class="photo-placeholder has-photo gallery-trigger aspect-[3/4] w-full rounded-2xl" data-index="4">
-              <img src="images/anh-05.jpg" alt="Ảnh 05" loading="lazy" />
-              <span class="photo-caption">Adipiscing elit</span>
+              <img src="images/anh-05.jpg" alt="Ảnh 05 — Tỏa sáng nhé" loading="lazy" />
+              <span class="photo-caption">Tỏa sáng nhé</span>
             </div>
           </div>
 
           <!-- ẢNH 06 -->
           <div class="star-frame p-2 sm:p-3 rounded-3xl">
             <div class="photo-placeholder has-photo gallery-trigger aspect-[3/4] w-full rounded-2xl" data-index="5">
-              <img src="images/anh-06.jpg" alt="Ảnh 06" loading="lazy" />
-              <span class="photo-caption">Sed do eiusmod</span>
+              <img src="images/anh-06.jpg" alt="Ảnh 06 — Hành trình mới" loading="lazy" />
+              <span class="photo-caption">Hành trình mới</span>
             </div>
           </div>
         </div>
@@ -1958,11 +1982,14 @@
           </span>
         </div>
 
-        <p class="italic text-3xl sm:text-4xl text-gold-300 mb-3">
-          Cảm ơn bạn thật nhiều!
+        <p class="italic text-2xl sm:text-3xl text-gold-300 mb-3 max-w-2xl mx-auto leading-snug">
+          Cảm ơn vì đã cùng mình đi qua một chặng đường đáng nhớ.
         </p>
-        <p class="text-sm sm:text-base text-blue-100/85 max-w-xl mx-auto leading-relaxed mb-8">
-          Hẹn gặp bạn lúc <strong class="text-white">15:00</strong> ngày <strong class="text-white">30/11/2026</strong> tại Số 12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, TP. Hồ Chí Minh để cùng lưu giữ những khoảnh khắc tốt nghiệp thật lung linh!
+        <p class="text-sm sm:text-base text-blue-100/90 max-w-xl mx-auto leading-relaxed mb-3">
+          Sự hiện diện của bạn sẽ khiến ngày đặc biệt này trở nên ý nghĩa hơn rất nhiều.
+        </p>
+        <p class="text-base sm:text-lg font-semibold text-gold-200 max-w-xl mx-auto leading-relaxed mb-8">
+          Hẹn gặp bạn trong ngày mình tốt nghiệp nhée !
         </p>
 
         <!-- Nút Tung mũ ăn mừng -->
@@ -2001,7 +2028,7 @@
             <svg class="w-4 h-4 text-gold-300" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
             </svg>
-            <span>Liên hệ: <strong class="text-white">[09xx xxx xxx]</strong></span>
+            <span>Liên hệ : <a href="tel:0889006764" class="font-bold text-white hover:text-gold-300 transition">0889006764</a></span>
           </span>
         </div>
       </div>
@@ -2326,7 +2353,7 @@
 
         const angleDeg = 145 + (Math.random() - 0.5) * 6;
         const angleRad = (angleDeg * Math.PI) / 180;
-        const baseSpeed = 2.2 + Math.random() * 1.3;
+        const baseSpeed = 5.5 + Math.random() * 3.0;
 
         scrollMeteors.push({
           x: startX,
@@ -2337,7 +2364,7 @@
           traveled: 0,
           tailLen: 180 + Math.random() * 110,
           life: 0,
-          maxLife: 175 + Math.floor(Math.random() * 65),
+          maxLife: 120 + Math.floor(Math.random() * 45),
           size: 3.6 + Math.random() * 2.4,
           isGold: Math.random() > 0.32,
         });
@@ -2853,16 +2880,29 @@
       const openBtn = document.getElementById('open-btn');
       const guestNameBox = document.getElementById('guest-name-box');
       const guestNameInput = document.getElementById('guest-name-input');
+      const guestNameError = document.getElementById('guest-name-error');
       const guestNameDisplay = document.getElementById('guest-name-display');
       const shootingStarWrap = document.getElementById('shooting-star-wrap');
 
       window.openInvitation = function () {
         if (isOpened) return;
-        isOpened = true;
 
         const enteredName = guestNameInput ? guestNameInput.value.trim() : '';
+        if (!enteredName) {
+          if (guestNameError) guestNameError.classList.remove('hidden');
+          if (guestNameInput) {
+            guestNameInput.classList.remove('is-invalid');
+            void guestNameInput.offsetWidth;
+            guestNameInput.classList.add('is-invalid');
+            guestNameInput.focus();
+          }
+          return;
+        }
+
+        isOpened = true;
+        if (guestNameError) guestNameError.classList.add('hidden');
         if (guestNameDisplay) {
-          guestNameDisplay.textContent = enteredName || 'Bạn iu';
+          guestNameDisplay.textContent = enteredName;
         }
 
         if (coverHeader) coverHeader.classList.add('is-hidden-up');
@@ -2925,6 +2965,12 @@
       }
 
       if (guestNameInput) {
+        guestNameInput.addEventListener('input', function () {
+          if (guestNameInput.value.trim()) {
+            guestNameInput.classList.remove('is-invalid');
+            if (guestNameError) guestNameError.classList.add('hidden');
+          }
+        });
         guestNameInput.addEventListener('keydown', function (e) {
           if (e.key === 'Enter') {
             e.preventDefault();
@@ -3038,12 +3084,12 @@
          10. TRÌNH XEM ẢNH LIGHTBOX (ẢNH 01 -> ẢNH 06)
          --------------------------------------------------------- */
       const galleryItems = [
-        { code: 'ẢNH 01', title: 'Lorem ipsum dolor', sub: 'Sit amet consectetur adipiscing' },
-        { code: 'ẢNH 02', title: 'Lorem ipsum', sub: 'Dolor sit amet, consectetur adipiscing elit' },
-        { code: 'ẢNH 03', title: 'Dolor sit amet', sub: 'Sed do eiusmod tempor incididunt' },
-        { code: 'ẢNH 04', title: 'Consectetur', sub: 'Ut labore et dolore magna aliqua' },
-        { code: 'ẢNH 05', title: 'Adipiscing elit', sub: 'Ut enim ad minim veniam' },
-        { code: 'ẢNH 06', title: 'Sed do eiusmod', sub: 'Quis nostrud exercitation ullamco' },
+        { code: 'ẢNH 01', title: 'Tân Cử Nhân IUH 2026', sub: 'Khoảnh khắc tỏa sáng rực rỡ của Nguyễn Bích Trân (@tranbtwinkle)' },
+        { code: 'ẢNH 02', title: 'Thanh xuân rực rỡ', sub: 'Bốn năm đại học gói gọn trong một nụ cười thật tươi' },
+        { code: 'ẢNH 03', title: 'Nắng vàng IUH', sub: 'Những ngày tháng đáng nhớ dưới mái trường Đại học Công nghiệp TP.HCM' },
+        { code: 'ẢNH 04', title: 'Trưởng thành hơn', sub: 'Sau những cơn mưa, cầu vồng cuối cùng cũng xuất hiện' },
+        { code: 'ẢNH 05', title: 'Tỏa sáng nhé', sub: 'Mỗi ngôi sao đều có khoảnh khắc rực rỡ nhất của riêng mình' },
+        { code: 'ẢNH 06', title: 'Hành trình mới', sub: 'Khép lại chặng đường sinh viên để mở ra chương mới đầy hứa hẹn' },
       ];
 
       const lightboxModal = document.getElementById('lightbox-modal');
