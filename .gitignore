@@ -1,0 +1,6 @@
+# Không cần cho trang web
+.sf/
+.vscode/
+*.gs
+# Ảnh không dùng trong thiệp
+images/1795575632330_*.jpg
